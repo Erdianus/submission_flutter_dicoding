@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     "Alfa Romeo",
     "Alpha Tauri",
     "Haas",
-    "Williams",
+    "Williams"
   ];
   var f1Drivers = [
     "Charles Leclerc",
