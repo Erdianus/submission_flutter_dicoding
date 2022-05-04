@@ -40,21 +40,26 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color.fromARGB(22, 158, 158, 158),
-        leading: Container(
-          margin: EdgeInsets.only(left: 20),
-          child: Image.asset("assets/logo.png"),
-        ),
-        title: Text(
-          "F1 ADDICT",
-          style: TextStyle(color: Colors.black),
-        ),
-        actions: [
-          Container(
-            margin: EdgeInsets.all(20),
-            child: Icon(Icons.logout_outlined),
-          )
-        ],
+        backgroundColor: Color.fromARGB(94, 168, 161, 161),
+        title: Row(children: [
+          Flexible(
+            flex: 1,
+            child: Container(
+              margin: EdgeInsets.only(right: 20),
+              child: Image(
+                image: AssetImage("assets/logo.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Flexible(
+            flex: 5,
+            child: Text(
+              "F1 ADDICT",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+        ]),
       ),
       body: SafeArea(
         child: Center(
@@ -139,23 +144,23 @@ class _HomePageState extends State<HomePage> {
                               F1Drivers(1, Color(0xFF1B2B5A),
                                   "assets/driver/Max.jpg"), //Max
                               F1Drivers(2, Color(0xFFed1c24),
-                                  "assets/driver/Max.jpg"), //Sainz
+                                  "assets/driver/carlos.jpg"), //Sainz
                               F1Drivers(3, Color(0xFF03BFB5),
-                                  "assets/driver/Max.jpg"), //russel
+                                  "assets/driver/russel.jpg"), //russel
                               F1Drivers(4, Color(0xFFFF8000),
-                                  "assets/driver/Max.jpg"), //norris
+                                  "assets/driver/lando.jpg"), //norris
                               F1Drivers(5, Color(0xFF03BFB5),
-                                  "assets/driver/Max.jpg"), //hamilton
+                                  "assets/driver/lewis.jpg"), //hamilton
                               F1Drivers(6, Color(0xFF1B2B5A),
-                                  "assets/driver/Max.jpg"), //perez
+                                  "assets/driver/perez.png"), //perez
                               F1Drivers(7, Color(0xFF981E32),
-                                  "assets/driver/Max.jpg"), //bottas
+                                  "assets/driver/bottas.jpg"), //bottas
                               F1Drivers(8, Color(0xFF005BA9),
-                                  "assets/driver/Max.jpg"), //ocon
+                                  "assets/driver/ocon.jpg"), //ocon
                               F1Drivers(9, Color(0xFF00293F),
-                                  "assets/driver/Max.jpg"), //Gasly
+                                  "assets/driver/gasly.jpg"), //Gasly
                               F1Drivers(10, Color(0xFF005BA9),
-                                  "assets/driver/Max.jpg"), //alonso
+                                  "assets/driver/alonso.jpg"), //alonso
                             ],
                           ),
                         )
@@ -185,9 +190,17 @@ class _HomePageState extends State<HomePage> {
             image: AssetImage(teamsImg),
             fit: BoxFit.contain,
           ),
-          Text(
-            f1Teams[i],
-            style: TextStyle(color: Colors.white),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              f1Teams[i],
+              style: TextStyle(color: Colors.white, fontSize: 35, shadows: [
+                Shadow(
+                    color: Colors.black.withOpacity(0.3),
+                    offset: const Offset(15, 15),
+                    blurRadius: 15)
+              ]),
+            ),
           ),
         ]),
         color: livery,
@@ -202,9 +215,9 @@ class _HomePageState extends State<HomePage> {
         elevation: 10,
         child: Row(children: [
           Flexible(
-            flex: 2,
+            flex: 1,
             child: Container(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.all(5),
               child: Image(
                 image: AssetImage(drivers),
                 fit: BoxFit.contain,
@@ -212,7 +225,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Flexible(
-            flex: 4,
+            flex: 3,
             child: Text(
               f1Drivers[i],
               style: TextStyle(color: Colors.white),
